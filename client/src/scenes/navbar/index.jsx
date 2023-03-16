@@ -41,7 +41,6 @@ const Navbar = () => {
 
   // const fullName = `${user.firstName} ${user.lastName}`;
   const fullName = `Yurii Rybachok`;
-  
 
   return (
     <FlexBetween padding="1rem 6%" backgroundColor={alt}>
