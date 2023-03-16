@@ -44,7 +44,7 @@ const Form = () => {
   const { palette } = useTheme();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const isNonMobile = useMediaQuery('(min-width: 600px)');
+  const isNonMobile = useMediaQuery('(min-width:600px)');
   const isLogin = pageType === 'login';
   const isRegister = pageType === 'register';
 
@@ -106,7 +106,7 @@ const Form = () => {
         handleSubmit,
         setFieldValue,
         resetForm,
-      }) => {
+      }) => (
         <form onSubmit={handleSubmit}>
           <Box
             display="grid"
@@ -187,6 +187,7 @@ const Form = () => {
                 </Box>
               </>
             )}
+
             <TextField
               label="Email"
               onBlur={handleBlur}
@@ -242,8 +243,8 @@ const Form = () => {
                 : 'Already have an account? Login here.'}
             </Typography>
           </Box>
-        </form>;
-      }}
+        </form>
+      )}
     </Formik>
   );
 };
