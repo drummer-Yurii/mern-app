@@ -70,7 +70,11 @@ const PostWidget = ({
         <FlexBetween gap="1rem">
           <FlexBetween gap="0.3rem">
             <IconButton onClick={patchLike}>
-              {isLiked ? <FavoriteOutlined sx={{ color: primary }} /> : <FavoriteBorderOutlined />}
+              {isLiked ? (
+                <FavoriteOutlined sx={{ color: primary }} />
+            ) : (
+                <FavoriteBorderOutlined />
+            )}
             </IconButton>
             <Typography>{likeCount}</Typography>
           </FlexBetween>
@@ -87,15 +91,13 @@ const PostWidget = ({
       </FlexBetween>
       {isComments && (
         <Box mt="0.5rem">
-            {comments.map((comment, i) => (
-                <Box key={`${name}-${i}`}>
-                    <Divider />
-                    <Typography sx={{ color: main, m: "0.5rem 0", pl: "1rem" }}>
-                        {comment}
-                    </Typography>
-                </Box>
-            ))}
-            <Divider />
+          {comments.map((comment, i) => (
+            <Box key={`${name}-${i}`}>
+              <Divider />
+              <Typography sx={{ color: main, m: '0.5rem 0', pl: '1rem' }}>{comment}</Typography>
+            </Box>
+          ))}
+          <Divider />
         </Box>
       )}
     </WidgetWrapper>
